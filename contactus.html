@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid #3498db;
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Us</h1>
+    <form onsubmit="sendEmail(); reset(); return false;">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="phone number">Phone Number:</label>
+      <input type="text" name="phone number" id="phone number" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <script src=" https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    const form=document.querySelector('form');
+
+   function sendEmail() {
+          Email.send({
+          Host : "smtp.elasticemail.com",
+          Username : "sagartg63@gmail.com",
+          Password : "D383564B2CE8A25A86DC7B5C0C870EA315B5"   ,  
+          To : "sagartg63@gmail.com",
+          From :"sagartg63@gmail.com",
+          Subject : "New contact Form Enquiry",
+          Body : "Thank you for contacting Us.We will soonly reach you"
+      }).then(
+        message => alert(message)
+      );
+   }
+   form.addEventListener('submit',(e) =>{
+     e.preventDefault(),
+     sendEmail();
+   })
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Horizontal Movement Animation</title>
+ <style>
+    .navbar{
+        background-color:rgb(30, 30, 30);
+        border-radius: 10px;
+        align-items: stretch;
+        position: relative;
+        bottom: 18px;
+    }
+    .navbar ul{
+        overflow: auto;
+    }
+    .navbar li{
+        color: white;
+        float: left;
+        list-style: none;
+        margin: 12px 15px;
+    }
+    .navbar li a{
+        padding: 7px 7px;
+       text-decoration: none;
+       color: whitesmoke;
+    }
+    .navbar li a:hover{
+        color: chocolate;
+    }
+ .container {
+  display: flex;
+  overflow: hidden;
+  width: 100%; /* Adjust as per your layout */
+  height: 400px;
+}
+
+.item {
+  width: 400px;
+  height: 200px;
+  padding: 4px;
+  background-color: #3498db;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  animation: moveRight 65s linear infinite; /* Adjust animation duration */
+  animation-direction: initial;
+  
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  25%{
+    transform: translateX(1300px); /* Adjust the distance to move */
+  }     
+ 50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(1300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+  0%{
+    transform:translateX(0);
+  }
+}
+ </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li> <a href="#">Home</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+  </div>
+</body>
+</html>
